@@ -1,0 +1,74 @@
+@import "../../../styles.scss";
+
+.toolbar {
+    position: fixed;
+    height: 48px;
+    background-color: $color-grey;
+}
+
+.toolbar-title {
+    padding: 0 16px;
+    color: $color-white;
+    text-decoration: none;
+}
+
+.menu-button {
+    background-color: $color-main-blue;
+    color: $color-white;
+    height: 36px;
+    width: 36px;
+}
+
+.sidenav-container {
+    position: fixed;
+    top: 48px;
+    bottom: 48px;
+    left: 0;
+    right: 0;
+}
+
+.sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+}
+
+.sidenav-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sidenav-title {
+    padding: 8px;
+    cursor: default;
+}
+
+.menu-list {
+    padding: 0;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 40px;
+}
+
+.menu-title-item {
+    text-decoration: none;
+    color: $color-white;
+}
+
+.footer {
+    position: fixed;
+    height: 48px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

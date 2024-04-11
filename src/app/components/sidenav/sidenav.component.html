@@ -1,1 +1,25 @@
-<p>sidenav works!</p>
+<mat-toolbar class="toolbar">
+    <button class="menu-button" mat-mini-fab (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <a class="toolbar-title" href="/home">Leet Study</a>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="side" opened class="sidenav">
+        <div class="sidenav-wrapper">
+            <span class="sidenav-title">List of Questions</span>
+            <mat-nav-list class="menu-list">
+                @for (menuItem of menuList; track menuItem) {
+                    <a class="menu-item" mat-button href="{{menuItem.link}}">{{ menuItem.label }}</a>
+                }
+            </mat-nav-list>
+        </div>
+    </mat-sidenav>
+
+    <section>
+        <router-outlet></router-outlet>
+    </section>
+</mat-sidenav-container>
+
+<mat-toolbar class="footer">Footer</mat-toolbar>
