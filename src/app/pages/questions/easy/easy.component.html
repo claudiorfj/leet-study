@@ -1,0 +1,35 @@
+<h1 class="title">Easy Questions</h1>
+@for (question of easyQuestionsList; track question.id) {
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ question.number }}. {{ question.title }}
+            </mat-panel-title>
+            <mat-panel-description class="panel-description">
+                <mat-icon fontIcon="check_box"
+                          class="icon-color"
+                          [style.color]="question.answer && question.answer.trim().length > 0
+                          ? '#04BF8A' : ''"></mat-icon>
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>{{ question.text }}</p>
+        @for (example of getExamples(question.id); track example) {
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{ example.title }}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <pre class="pre-wrapper"><code>
+                {{ example.text }}
+                </code></pre>
+            </mat-expansion-panel>
+        }
+        <div>
+            <span>Code answer:</span>
+            <pre class="pre-wrapper"><code>
+                {{ question.answer }}
+            </code></pre>
+        </div>
+    </mat-expansion-panel>
+}
