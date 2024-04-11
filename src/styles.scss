@@ -1,5 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
+$color-black: #0D0D0D;
+$color-grey: #262626;
+$color-darker-blue: #3049D9;
+$color-main-blue: #4158D9;
+$color-light-blue: #6677D9;
+$color-green: #04BF8A;
+$color-white: #F2F2F2;
+
+
 html, body {
     height: 100%;
 }
@@ -7,4 +16,12 @@ html, body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+pre {
+    margin: 0;
+}
+
+pre code {
+    white-space: pre-wrap;
 }
