@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "number": 2620,
+    "language": "Javascript",
+    "title": "Counter",
+    "text": "Given an integer n, return a counter function. This counter function initially returns n and then returns 1 more than the previous value every subsequent time it is called (n, n + 1, n + 2, etc).",
+    "answer": "\nfunction createCounter(n: number): () => number {\n    let counter = n\n    return function() {\n        return counter++\n    }\n}",
+    "examples": [
+      {
+        "title": "Example 1:",
+        "text": "\nInput:\n n = 10\n [\"call\",\"call\",\"call\"]\n Output: [10,11,12]\n Explanation:\n counter() = 10 // The first time counter() is called, it returns n.\n counter() = 11 // Returns 1 more than the previous time.\n counter() = 12 // Returns 1 more than the previous time."
+      },
+      {
+        "title": "Example 2:",
+        "text": "\nInput:\n n = -2\n [\"call\",\"call\",\"call\",\"call\",\"call\"]\n Output: [-2,-1,0,1,2]\n Explanation: counter() initially returns -2. Then increases after each subsequent call."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "number": 2621,
+    "language": "Javascript",
+    "title": "Sleep",
+    "text": "Given a positive integer millis, write an asynchronous function that sleeps for millis milliseconds. It can resolve any value.",
+    "answer": "\nasync function sleep(millis) {\n    return new Promise(resolve => {\n    setTimeout(resolve, millis);\n  });\n}",
+    "examples": [
+      {
+        "title": "Example 1:",
+        "text": "\nInput: millis = 100\nOutput: 100\nExplanation: It should return a promise that resolves after 100ms.\nlet t = Date.now();\nsleep(100).then(() => {\n  console.log(Date.now() - t); // 100\n});\n"
+      },
+      {
+        "title": "Example 2:",
+        "text": "\nInput: millis = 200\nOutput: 200\nExplanation: It should return a promise that resolves after 200ms."
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "number": 2619,
+    "language": "Javascript",
+    "title": "Array Prototype Last",
+    "text": "Write code that enhances all arrays such that you can call the array.last() method on any array and it will return the last element. If there are no elements in the array, it should return -1.\nYou may assume the array is the output of JSON.parse.",
+    "answer": "\ndeclare global {\n    interface Array<T> {\n        last(): T | -1;\n    }\n}\n\nArray.prototype.last = function() {\n    if (this.length > 0){\n        return this[this.length - 1]\n    } else {\n        return -1;\n    }\n};",
+    "examples": [
+      {
+        "title": "Example 1:",
+        "text": "\nInput: nums = [null, {}, 3]\nOutput: 3\nExplanation: Calling nums.last() should return the last element: 3."
+      },
+      {
+        "title": "Example 2:",
+        "text": "\nInput: nums = []\nOutput: -1\nExplanation: Because there are no elements, return -1."
+      }
+    ]
+  }
+]
